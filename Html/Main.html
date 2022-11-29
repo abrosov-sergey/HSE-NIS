@@ -72,18 +72,69 @@
             </summary>
             <ul>
                 <li>
-                    <b>Написание сценариев использования приложения.</b>
+                    <details open>
+                        <summary>
+                            <b>Написание сценариев использования приложения.</b>
+                        </summary>
+
+                        <p>
+                            <strong>П</strong> – пользователь(врач/пациент).
+                            <br>
+                            <strong>ВП</strong> – wеб-приложение.
+                        </p>
+
+                        <p><strong>Работа со списком учащихся</strong></p>
+                        <ol id="c1">
+                            <li><b>П</b> переходит в раздел для работы со списком учащихся.</li>
+                            <li><b>ВП</b> отображает раздел для работы со списком учащихся.</li>
+                        </ol>
+                    </details>
+                </li>
+
+                <br>
+                
+                <li>
+                    <details>
+                        <summary>
+                            <b>Написание сценариев взаимодействия элементов приложения.</b>
+                        </summary>
+                        
+                        <p>
+                            <strong>Us</strong> – User.
+                            <br>
+                            <strong>Br</strong> – Browser.
+                            <br>
+                            <strong>DS</strong> – Data Storage.
+                        </p>
+
+                        <p><strong>Вход в систему</strong></p>
+                        <ol>
+                            <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+                            <li><b>Br</b> отображает раздел для работы со списком учащихся.</li>
+                        </ol>
+                    </details>
+                </li>
+                
+                <br>
+
+                <li>
+                    <details>
+                        <summary>
+                            <b>Написание сценариев выполнения скриптов.</b>
+                        </summary>
                     
-                </li>
-                <br>
-                <li>
-                    <b>Написание сценариев взаимодействия элементов приложения.</b>
-
-                </li>
-                <br>
-                <li>
-                    <b>Написание сценариев выполнения скриптов.</b>
-
+                        <p><strong>start()</strong></p>
+                        <pre id="p0">
+                            loadStudentList()
+                            loadLessonList()
+                            showAttendanceRecords()
+                            <strong>refreshStat()</strong>
+                            refreshRating()
+                            hideStepChart();
+                            hideAttendanceCloud();
+                            setFileName()
+                        </pre>
+                    </details>
                 </li>
             </ul>
 
