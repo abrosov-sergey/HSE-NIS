@@ -1,0 +1,11 @@
+# звездочка = для всех типов файлов
+[*]
+charset = utf-8
+indent_style = space
+indent_size = 2
+insert_final_newline = true
+trim_trailing_whitespace = true
+
+# отключить определенную настройку для какого либо типа файлов
+# [*.js]
+# insert_final_newline = true
