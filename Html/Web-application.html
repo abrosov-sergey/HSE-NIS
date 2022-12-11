@@ -8,9 +8,32 @@
 
         <link rel="manifest" href="/my.webmanifest">
         <meta name="theme-color" content="#FF00FF">
+
+        <link rel="stylesheet" href="../CSS/Buttons/DeleteButton.css">
+        <link rel="stylesheet" href="../CSS/Buttons/SaveButton.css">
     </head>
 
     <body>
-        Само приложение.
+        <p>
+            <a href="http://127.0.0.1:5500/Html/Main.html">ГЛАВНОЕ МЕНЮ</a> 
+        </p>
+        
+        <img width="1200" height="800" src="../Images/Abrosov-NIS.jpg" alt="Диаграмма вариантов использования приложения" usemap="#useCase">
+        
+        <center>
+            <button id="upload" class="manual">Загрузить снимок с устройства</button>
+            <button id="upload series" class="manual">Загрузить серию-снимков с устройства</button>
+            <button id="upload for url" class="manual">Загрузить снимок по ссылке</button>
+            <button id="upload series for url" class="manual">Загрузить серию-снимков по ссылке</button>
+            <button id="clear" class="deleteButton">Очистить</button>
+            <button id="download" class="saveButton" >Сохранить</button>
+        </center>
+
+        <br>
+
+        <center>
+            <button id="pred photo" class="manual">Предыдущий снимок</button>
+            <button id="next photo" class="manual">Следующий снимок</button>
+        </center>
     </body>
 </html>
