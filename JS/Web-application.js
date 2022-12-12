@@ -40,6 +40,7 @@ function donwload(input) {
 
     reader.onload = function () {
         let img = document.createElement('img');
+        wrapper.removeChild(wrapper.children[0]);
         wrapper.appendChild(img);
         img.src = reader.result;
     }
