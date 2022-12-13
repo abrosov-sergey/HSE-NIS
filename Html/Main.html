@@ -66,7 +66,7 @@
         </details>
 
         <!-- Point №2 -->
-        <details>
+        <details open>
             <summary>
                 2. Этап проектирования:
             </summary>
@@ -83,21 +83,32 @@
                             <strong>ВП</strong> – wеб-приложение.
                         </p>
 
-                        <p><strong>Работа со списком учащихся</strong></p>
+                        <p><strong>Загрузка снимка с устройства</strong></p>
                         <ol id="c1">
-                            <li><b>П</b> переходит в раздел для работы со списком учащихся.</li>
-                            <li><b>ВП</b> отображает раздел для работы со списком учащихся.</li>
+                            <li><b>П</b> переходит в раздел работы со снимками.</li>
+                            <li><b>ВП</b> отображает раздел для работы со снимками.</li>
+                            <li><b>П</b> нажимает "Выбрать файл".</li>
+                            <li><b>ВП</b> предлагает выбрать файл на устройстве.</li>
+                            <li><b>П</b> нажимает на файл, после нажимает "Открыть".</li>
+                            <li><b>ВП</b> отображает выбранный снимок в окне разметки.</li>
+                        </ol>
+
+                        <p><strong>Удаление снимка</strong></p>
+                        <ol id="c2">
+                            <li><b>П</b> переходит в раздел работы со снимками.</li>
+                            <li><b>ВП</b> отображает раздел для работы со снимками.</li>
+                            <li><b>П</b> нажимает "Очистить".</li>
+                            <li><b>ВП</b> удаляет текущий файл, на его месте добавляется снимок пустого файла.</li>
                         </ol>
                     </details>
                 </li>
 
                 <br>
                 <br>
-
                 <br>
                 
                 <li>
-                    <details>
+                    <details open>
                         <summary>
                             <b>Написание сценариев взаимодействия элементов приложения.</b>
                         </summary>
@@ -106,14 +117,24 @@
                             <strong>Us</strong> – User.
                             <br>
                             <strong>Br</strong> – Browser.
-                            <br>
-                            <strong>DS</strong> – Data Storage.
                         </p>
 
-                        <p><strong>Вход в систему</strong></p>
-                        <ol>
+                        <p><strong>Загрузка снимка с устройства</strong></p>
+                        <ol id="cc1">
                             <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
-                            <li><b>Br</b> отображает раздел для работы со списком учащихся.</li>
+                            <li><b>Br</b> отображает раздел для работы со снимками.</li>
+                            <li><b>Us</b> просит <b>Br</b> обработать клик по кнопке "Загрузить файл".</li>
+                            <li><b>Br</b> отобржает окно выбора файла с устройства.</li>
+                            <li><b>Us</b> выбирает файл и просит <b>Br</b> отобразить его.</li>
+                            <li><b>Br</b> отобржает файл.</li>
+                        </ol>
+
+                        <p><strong>Удаление снимка</strong></p>
+                        <ol id="cc2">
+                            <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+                            <li><b>Br</b> отображает раздел для работы со снимками.</li>
+                            <li><b>Us</b> просит <b>Br</b> обработать клик по кнопке "Очистить".</li>
+                            <li><b>Br</b> удаляет файл и на его место добавляет пустой файл.</li>
                         </ol>
                     </details>
                 </li>
@@ -123,21 +144,19 @@
                 <br>
 
                 <li>
-                    <details>
+                    <details open>
                         <summary>
                             <b>Написание сценариев выполнения скриптов.</b>
                         </summary>
                     
-                        <p><strong>start()</strong></p>
-                        <pre id="p0">
-                            loadStudentList()
-                            loadLessonList()
-                            showAttendanceRecords()
-                            <strong>refreshStat()</strong>
-                            refreshRating()
-                            hideStepChart();
-                            hideAttendanceCloud();
-                            setFileName()
+                        <p><strong>button.input.downloadFile.onclick</strong></p>
+                        <pre id="ccc1">
+                            downloadPhoto()
+                        </pre>
+
+                        <p><strong>button.deletePhoto.onclick</strong></p>
+                        <pre id="ccc2">
+                            deletePhoto()
                         </pre>
                     </details>
                 </li>
