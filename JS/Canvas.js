@@ -143,9 +143,7 @@ function prepareField()
     console.log("prepareField()");
   
   canvas = document.getElementById("field");
-  context 
-  = 
-  canvas.getContext("2d");
+  context = canvas.getContext("2d");
   width = Number(canvas.getAttribute("width"));
   height = Number(canvas.getAttribute("height"));
   cellCountX = width / cellSize;
