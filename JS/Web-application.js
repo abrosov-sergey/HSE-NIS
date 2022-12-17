@@ -42,18 +42,24 @@ function downloadPhoto(input) {
         let img = document.createElement('img');
         wrapper.removeChild(wrapper.children[0]);
         wrapper.appendChild(img);
+        img.width = 500;
+        img.height = 500;
         img.src = reader.result;
+        // img.hidden = "hidden";
+        img.id = "mainImage";
     }
 }
 
 function deletePhoto() {
     let img = document.createElement('img');
     // <img width="800" height="600" src="../Images/UploadPhoto.jpg" alt="Фото указывающее на место для разметки" usemap="#useCase">
-    img.width = 800;
-    img.height = 600;
     img.src = "../Images/UploadPhoto.jpg";
     img.alt = "Фото указывающее на место для разметки";
     img.useMap = "#useCase";
+    // img.hidden = "hidden"
+    img.width = 500;
+    img.height = 500;
+    img.id = "mainImage";
 
     wrapper.removeChild(wrapper.children[0]);
     wrapper.appendChild(img);

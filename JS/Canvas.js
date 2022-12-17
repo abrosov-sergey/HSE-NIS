@@ -141,9 +141,10 @@ function drawCell(cellX, cellY, cellState)
 function prepareField()
 {
     console.log("prepareField()");
-  
+
   canvas = document.getElementById("field");
   context = canvas.getContext("2d");
+//   context.drawImage(document.getElementById("mainImage"), 0, 0)
   width = Number(canvas.getAttribute("width"));
   height = Number(canvas.getAttribute("height"));
   cellCountX = width / cellSize;
@@ -167,6 +168,8 @@ function prepareField()
       level--;
     };
   drawGrid();
+
+  context.drawImage(document.getElementById("mainImage"), 0, 0);
   
 //   level--;
 }
