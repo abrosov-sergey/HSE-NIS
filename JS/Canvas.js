@@ -144,6 +144,7 @@ function prepareField()
 
   canvas = document.getElementById("field");
   context = canvas.getContext("2d");
+  context.drawImage(document.getElementById("mainImage"), 0, 0);
 //   context.drawImage(document.getElementById("mainImage"), 0, 0)
   width = Number(canvas.getAttribute("width"));
   height = Number(canvas.getAttribute("height"));
@@ -168,8 +169,6 @@ function prepareField()
       level--;
     };
   drawGrid();
-
-  context.drawImage(document.getElementById("mainImage"), 0, 0);
   
 //   level--;
 }
