@@ -40,13 +40,26 @@ function downloadPhoto(input) {
 
     reader.onload = function () {
         let img = document.createElement('img');
-        wrapper.removeChild(wrapper.children[0]);
+        wrapper.removeChild(wrapper.children[1]);
         wrapper.appendChild(img);
         img.width = 500;
         img.height = 500;
         img.src = reader.result;
         // img.hidden = "hidden";
         img.id = "mainImage";
+
+        img.onload = function() {
+            canvas = document.getElementById("field");
+            context = canvas.getContext("2d");
+            context.drawImage(img, 0, 0, 500, 500);
+
+            width = Number(canvas.getAttribute("width"));
+            height = Number(canvas.getAttribute("height"));
+            cellCountX = width / cellSize;
+            cellCountY = height / cellSize;
+
+            drawGrid();
+        };
     }
 }
 
@@ -61,7 +74,7 @@ function deletePhoto() {
     img.height = 500;
     img.id = "mainImage";
 
-    wrapper.removeChild(wrapper.children[0]);
+    wrapper.removeChild(wrapper.children[1]);
     wrapper.appendChild(img);
 }
 
