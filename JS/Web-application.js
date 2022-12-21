@@ -76,6 +76,19 @@ function deletePhoto() {
 
     wrapper.removeChild(wrapper.children[1]);
     wrapper.appendChild(img);
+
+    img.onload = function() {
+        canvas = document.getElementById("field");
+        context = canvas.getContext("2d");
+        context.drawImage(img, 0, 0, 500, 500);
+
+        width = Number(canvas.getAttribute("width"));
+        height = Number(canvas.getAttribute("height"));
+        cellCountX = width / cellSize;
+        cellCountY = height / cellSize;
+
+        drawGrid();
+    };
 }
 
 // + include / пунктик / обратная стрелка / 3 / не кнопка для увеличения громкости, а увеличение громкости 
