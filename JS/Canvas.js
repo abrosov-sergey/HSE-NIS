@@ -66,7 +66,7 @@ function drawPixel(x, y)
   
   //log(event);
   
-  context.fillStyle = "black";
+  context.fillStyle = "red";
   context.fillRect(x, y, 1, 1);
  
   //level--;
@@ -128,7 +128,7 @@ function drawCell(cellX, cellY, cellState)
   }
   else
   {
-    context.fillStyle = cellState ? "black" : "white";
+    context.fillStyle = cellState ? "red" : "white";
   }
   context.fillRect(cellX * cellSize + 1, cellY * cellSize + 1, cellSize - 2, cellSize - 2);
   
@@ -192,7 +192,7 @@ function drawGrid()
 
 function drawLine(xFrom, yFrom, xTo, yTo)
 {
-    console.log("drawLine()")
+  console.log("drawLine()")
   context.beginPath();
   context.moveTo(xFrom, yFrom);
   context.lineTo(xTo, yTo);

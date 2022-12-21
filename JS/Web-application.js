@@ -31,6 +31,7 @@
 //     // });
 // }
 
+var urlFromUser;
 let wrapper = document.querySelector('.img__wrapper');
 
 function downloadPhoto(input) {
@@ -91,7 +92,38 @@ function deletePhoto() {
     };
 }
 
-// + include / пунктик / обратная стрелка / 3 / не кнопка для увеличения громкости, а увеличение громкости 
-// + реализовать по 2-3 пункта в сценариях использования и отправить (для каждого)
+function savingURL(input1) {
+    // urlFromUser = new URL(input);
+    urlFromUser = input.files[0];
+    console.log(urlFromUser);
+}
 
-// canvas - холст ()
+function downloadPhotoByUrl() {
+    let file = urlFromUser;
+    let reader = new FileReader();
+    reader.readAsDataURL(file);
+
+    reader.onload = function () {
+        let img = document.createElement('img');
+        wrapper.removeChild(wrapper.children[1]);
+        wrapper.appendChild(img);
+        img.width = 500;
+        img.height = 500;
+        img.src = reader.result;
+        // img.hidden = "hidden";
+        img.id = "mainImage";
+
+        img.onload = function() {
+            canvas = document.getElementById("field");
+            context = canvas.getContext("2d");
+            context.drawImage(img, 0, 0, 500, 500);
+
+            width = Number(canvas.getAttribute("width"));
+            height = Number(canvas.getAttribute("height"));
+            cellCountX = width / cellSize;
+            cellCountY = height / cellSize;
+
+            drawGrid();
+        };
+    }
+}

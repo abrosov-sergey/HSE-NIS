@@ -10,7 +10,7 @@
         <meta name="theme-color" content="#FF00FF">
 
         <link rel="stylesheet" href="../CSS/Buttons/DeleteButton.css">
-        <link rel="stylesheet" href="../CSS/Buttons/SaveButton.css">
+        <link rel="stylesheet" href="../CSS/Buttons/StepBackButton.css">
         <!-- <script src="../JS/Web-application.js"></script> -->
     </head>
 
@@ -27,15 +27,25 @@
         </center>
 
         <center>
+            <input name="guruweba_example_email" type="url" placeholder="https://example.com" onchange="savingURL(this)" />
+            <button id="upload for url" class="manual" onclick="downloadPhotoByUrl()">Загрузить снимок по ссылке</button>
+
             <input type="file" onchange="downloadPhoto(this)">
+
+            <!-- <button id="step-back" class="stepBackButton" onclick="stepBack()">Отменить действие</button> -->
+
+            <button id="clear" class="deleteButton" onclick="deletePhoto()">Очистить</button>
+        </center>
+
+        <br>
+
+        <center>
             <!-- <button id="upload-btn">
                 <label for="upload-file">Загрузить файл</label>
             </button>          
             <span id="upload-text">Файл не выбран</span> -->
-
-            <button id="upload for url" class="manual">Загрузить снимок по ссылке</button>
+            
             <!-- <button id="upload series for url" class="manual">Загрузить серию-снимков по ссылке</button> -->
-            <button id="clear" class="deleteButton" onclick="deletePhoto()">Очистить</button>
             <!-- <button id="download" class="saveButton" >Сохранить</button> -->
         </center>
 
