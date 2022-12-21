@@ -94,36 +94,38 @@ function deletePhoto() {
 
 function savingURL(input1) {
     // urlFromUser = new URL(input);
-    urlFromUser = input.files[0];
+    urlFromUser = input1.value;
     console.log(urlFromUser);
 }
 
 function downloadPhotoByUrl() {
-    let file = urlFromUser;
+    // let file = "";
     let reader = new FileReader();
-    reader.readAsDataURL(file);
+    // reader.readAsDataURL(urlFromUser);
+    // https://cdn.culture.ru/c/69169.884x442.jpg
+    // https://cdn.culture.ru/c/69169.884x442.jpg
+    // https://cdn.culture.ru/c/69169.884x442.jpg
+    console.log("supppp");
 
-    reader.onload = function () {
-        let img = document.createElement('img');
-        wrapper.removeChild(wrapper.children[1]);
-        wrapper.appendChild(img);
-        img.width = 500;
-        img.height = 500;
-        img.src = reader.result;
-        // img.hidden = "hidden";
-        img.id = "mainImage";
+    let img = document.createElement('img');
+    wrapper.removeChild(wrapper.children[1]);
+    wrapper.appendChild(img);
+    img.width = 500;
+    img.height = 500;
+    img.src = urlFromUser;
+    // img.hidden = "hidden";
+    img.id = "mainImage";
 
-        img.onload = function() {
-            canvas = document.getElementById("field");
-            context = canvas.getContext("2d");
-            context.drawImage(img, 0, 0, 500, 500);
+    img.onload = function() {
+        canvas = document.getElementById("field");
+        context = canvas.getContext("2d");
+        context.drawImage(img, 0, 0, 500, 500);
 
-            width = Number(canvas.getAttribute("width"));
-            height = Number(canvas.getAttribute("height"));
-            cellCountX = width / cellSize;
-            cellCountY = height / cellSize;
+        width = Number(canvas.getAttribute("width"));
+        height = Number(canvas.getAttribute("height"));
+        cellCountX = width / cellSize;
+        cellCountY = height / cellSize;
 
-            drawGrid();
-        };
-    }
+        drawGrid();
+    };
 }
