@@ -39,7 +39,7 @@ function downloadPhoto(input) {
     let reader = new FileReader();
     reader.readAsDataURL(file);
 
-    reader.onload = function () {
+    reader.onload = function() {
         let img = document.createElement('img');
         wrapper.removeChild(wrapper.children[1]);
         wrapper.appendChild(img);

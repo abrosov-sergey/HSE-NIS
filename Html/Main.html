@@ -72,7 +72,7 @@
             </summary>
             <ul>
                 <li>
-                    <details open>
+                    <details>
                         <summary>
                             <b>Написание сценариев использования приложения.</b>
                         </summary>
@@ -109,6 +109,24 @@
                             <li><b>П</b> нажимает на кнопку "Загрузить снимок по ссылке".</li>
                             <li><b>ВП</b> загружает снимок и открывает его в окне разметки.</li>
                         </ol>
+
+                        <p><strong>Разметка снимка</strong></p>
+                        <ol id="c4">
+                            <li><b>П</b> переходит в раздел работы со снимками.</li>
+                            <li><b>ВП</b> отображает раздел для работы со снимками.</li>
+                            <li><b>П</b> нажимает на квадрат в сетке на снимке.</li>
+                            <li><b>ВП</b> помечает выбранный квадрат красным цветом.</li>
+                        </ol>
+
+                        <p><strong>Сохранение размеченного снимка</strong></p>
+                        <ol id="c5">
+                            <li><b>П</b> переходит в раздел работы со снимками.</li>
+                            <li><b>ВП</b> отображает раздел для работы со снимками.</li>
+                            <li><b>П</b> нажимает правой кнопкой мыши по снимку.</li>
+                            <li><b>П</b> выбирает во всплывающем окне "сохранить изображение как...".</li>
+                            <li><b>ВП</b> открывает проводник для сохранения файла.</li>
+                            <li><b>П</b> выбирает директорию и сохраняет в ней снимок.</li>
+                        </ol>
                     </details>
                 </li>
 
@@ -117,7 +135,7 @@
                 <br>
                 
                 <li>
-                    <details open>
+                    <details>
                         <summary>
                             <b>Написание сценариев взаимодействия элементов приложения.</b>
                         </summary>
@@ -154,6 +172,26 @@
                             <li><b>Us</b> просит <b>Br</b> обработать клик по кнопке "Загрузить файл по ссылке".</li>
                             <li><b>Br</b> Загружает файл по ссылке и отобржает его в окне разметки.</li>
                         </ol>
+
+                        <p><strong>Разметка снимка</strong></p>
+                        <ol id="cc4">
+                            <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+                            <li><b>Br</b> отображает раздел для работы со снимками.</li>
+                            <li><b>Us</b> просит <b>Br</b> обработать нажатие по квадрату сетки.</li>
+                            <li><b>Br</b> обрабатывает нажатие и изменяет состояние сетки в точке.</li>
+                        </ol>
+
+                        <p><strong>Сохранение размеченного снимка</strong></p>
+                        <ol id="cс5">
+                            <li><b>Us</b> просит <b>Br</b> запустить web-приложение.</li>
+                            <li><b>Br</b> отображает раздел для работы со снимками.</li>
+                            <li><b>Us</b> нажимает правой кнопкой мыши по снимку.</li>
+                            <li><b>Br</b> обрабатывает нажатие и открывает вспомогательное окно для работы со страницей.</li>
+                            <li><b>Us</b> выбирает во всплывающем окне "сохранить изображение как...".</li>
+                            <li><b>Br</b> обрабатывает нажатие и открывает проводник.</li>
+                            <li><b>Us</b> выбирает директорию и нажимает сохранить.</li>
+                            <li><b>Br</b> обрабатывает нажатие и сохраняет размеченный снимок.</li>
+                        </ol>
                     </details>
                 </li>
                 
@@ -170,16 +208,39 @@
                         <p><strong>button.input.downloadFile.onclick</strong></p>
                         <pre id="ccc1">
                             downloadPhoto()
+                            readAsDataURL(file)
+                            drawImage(img, 0, 0, 500, 500)
+                            drawGrid()
                         </pre>
 
                         <p><strong>button.deletePhoto.onclick</strong></p>
                         <pre id="ccc2">
                             deletePhoto()
+                            drawImage(img, 0, 0, 500, 500)
+                            drawGrid()
                         </pre>
 
-                        <p><strong>button.deletePhoto.onclick</strong></p>
+                        <p><strong>button.downloadPhotoByUrlButton.onclick</strong></p>
                         <pre id="ccc3">
-                            deletePhoto()
+                            savingURL(input1)
+                            downloadPhotoByUrl()
+                            drawImage(img, 0, 0, 500, 500)
+                            drawGrid()
+                        </pre>
+                        
+                        <p><strong>canvas.field.onclick</strong></p>
+                        <pre id="ccc5.1">
+                            getCellX(event)
+                            getCellY(event)
+                            changeCellState(cellX, cellY)
+                        </pre>
+
+                        <p><strong>start()</strong></p>
+                        <pre id="ccc5.2">
+                            start()
+                            prepareField()
+                            getLastState()
+                            showState()
                         </pre>
                     </details>
                 </li>
