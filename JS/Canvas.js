@@ -166,7 +166,7 @@ function prepareField()
         changeCellState(x, y);
       }
       
-      level--;
+      //level--;
     };
   drawGrid();
   

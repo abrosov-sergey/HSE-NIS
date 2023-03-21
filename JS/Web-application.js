@@ -96,6 +96,7 @@ function savingURL(input1) {
     // urlFromUser = new URL(input);
     urlFromUser = input1.value;
     console.log(urlFromUser);
+    input1.value = "";
 }
 
 function downloadPhotoByUrl() {
@@ -128,4 +129,24 @@ function downloadPhotoByUrl() {
 
         drawGrid();
     };
+}
+
+function deletePhoto1() {
+    let img = document.createElement('img');
+   
+    img.width = 500;
+    img.height = 500;
+
+    img = wrapper.children[1];
+
+    canvas = document.getElementById("field");
+    context = canvas.getContext("2d");
+    context.drawImage(img, 0, 0, 500, 500);
+
+    width = Number(canvas.getAttribute("width"));
+    height = Number(canvas.getAttribute("height"));
+    cellCountX = width / cellSize;
+    cellCountY = height / cellSize;
+
+    drawGrid();
 }
