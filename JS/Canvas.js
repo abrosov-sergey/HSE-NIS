@@ -9,15 +9,17 @@ let canvas, context, width, height, matrix, matrixTransitional,
 
 start();
 
+const linkA = document.querySelector('.deleteButton');
+linkA.click();
+
 function start() 
 {
-    console.log("start()");
+  console.log("start()");
+  prepareField();
+  matrix = getLastState();
+  showState();
 
-    prepareField();
-    matrix = getLastState();
-    showState();
-    
-    // level--;
+  // level--;
 }
 
 //
