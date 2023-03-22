@@ -131,7 +131,7 @@ function downloadPhotoByUrl() {
     };
 }
 
-function deletePhoto1() {
+function deleteGrid() {
     let img = document.createElement('img');
    
     img.width = 500;
